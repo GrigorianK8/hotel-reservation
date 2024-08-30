@@ -9,9 +9,9 @@ public interface HotelService {
 
     void saveOrUpdateHotel(Hotel hotel);
 
-    Hotel getHotelById(Long id);
+    Optional<Hotel> getHotelById(Long id);
 
-    Optional<Hotel> getHotelByCity(String city);
+    List<Hotel> getHotelsByCity(String city);
 
     List<Hotel> getAllHotels();
 

@@ -21,13 +21,12 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public Hotel getHotelById(Long id) {
-        return hotelRepository.findById(id).orElseThrow(() ->
-                new RuntimeException("Hotel is not found with id: " + id));
+    public Optional<Hotel> getHotelById(Long id) {
+        return hotelRepository.findById(id);
     }
 
     @Override
-    public Optional<Hotel> getHotelByCity(String city) {
+    public List<Hotel> getHotelsByCity(String city) {
         return hotelRepository.getHotelByCity(city);
     }
 
